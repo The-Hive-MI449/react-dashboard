@@ -1,0 +1,5 @@
+Weather API
+
+Insert zipcode to view wind conditions and other Weather
+
+Pick a threshold, if wind is above the threshold say it's too windy for the bees
