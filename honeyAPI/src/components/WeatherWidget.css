@@ -1,0 +1,190 @@
+.weather-widget {
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 15px rgba(25, 118, 210, 0.1);
+  border-left: 5px solid #1976d2;
+}
+
+.weather-widget h2 {
+  color: #0d47a1;
+  margin: 0 0 0.5rem 0;
+  font-size: 1.8rem;
+}
+
+.weather-widget .subtitle {
+  color: #1565c0;
+  margin: 0 0 1.5rem 0;
+  font-size: 0.95rem;
+}
+
+.location-prompt {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.location-prompt p {
+  margin: 0 0 1rem 0;
+  color: #666;
+}
+
+.location-btn {
+  background: linear-gradient(135deg, #1976d2 0%, #0d47a1 100%);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.location-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(25, 118, 210, 0.3);
+}
+
+.refresh-weather-btn {
+  background: linear-gradient(135deg, #1976d2 0%, #0d47a1 100%);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.refresh-weather-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(25, 118, 210, 0.3);
+}
+
+.refresh-weather-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.weather-card {
+  background: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.weather-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.weather-icon {
+  font-size: 3rem;
+}
+
+.location-info h3 {
+  margin: 0 0 0.25rem 0;
+  color: #0d47a1;
+  font-size: 1.3rem;
+}
+
+.weather-time {
+  margin: 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.weather-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.stat {
+  text-align: center;
+  padding: 1rem;
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+  border-radius: 8px;
+}
+
+.stat-label {
+  display: block;
+  color: #1565c0;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.stat-value {
+  display: block;
+  color: #0d47a1;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.foraging-advice {
+  border-left: 4px solid;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 6px;
+  margin-top: 1rem;
+}
+
+.foraging-advice h4 {
+  margin: 0 0 0.5rem 0;
+  color: #333;
+  font-size: 1rem;
+}
+
+.foraging-advice p {
+  margin: 0;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.error-message {
+  color: #d32f2f;
+  padding: 1rem;
+  background-color: #ffebee;
+  border-radius: 6px;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .weather-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.75rem;
+  }
+
+  .weather-stats {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .weather-icon {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .weather-widget {
+    padding: 1.5rem;
+  }
+
+  .weather-card {
+    padding: 1rem;
+  }
+}
