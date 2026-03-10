@@ -50,19 +50,6 @@ button {
 button:hover {
   border-color: var(--accent);
 }
-
-.lookup-btn {
-  background-color: var(--accent);
-  color: #000000;
-  border: 1px solid rgba(0,0,0,0.08);
-}
-.lookup-btn:hover {
-  filter: brightness(0.96);
-}
-.lookup-btn:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -81,12 +68,6 @@ button:focus-visible {
   }
 }
 
-/* Provided font and heading styles */
-.kdam-thmor-pro-regular {
-  font-family: "Kdam Thmor Pro", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
 .work-sans {
   font-family: "Work Sans", sans-serif;
   font-optical-sizing: auto;
