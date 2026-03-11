@@ -1,19 +1,19 @@
 .bee-facts {
-  background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+  background: #ffffff;
   border-radius: 12px;
   padding: 2rem;
-  box-shadow: 0 4px 15px rgba(230, 124, 17, 0.1);
-  border-left: 5px solid #e65100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-left: 5px solid #DBC81A;
 }
 
 .bee-facts h2 {
-  color: #bf360c;
+  color: #000000;
   margin: 0 0 0.5rem 0;
   font-size: 1.8rem;
 }
 
 .bee-facts .subtitle {
-  color: #d84315;
+  color: #666;
   margin: 0 0 1.5rem 0;
   font-size: 0.95rem;
 }
@@ -26,8 +26,8 @@
 }
 
 .random-btn {
-  background: linear-gradient(135deg, #ff6f00 0%, #e65100 100%);
-  color: white;
+  background: #DBC81A;
+  color: #000000;
   border: none;
   padding: 0.75rem 1.5rem;
   border-radius: 8px;
@@ -39,7 +39,7 @@
 
 .random-btn:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(230, 124, 17, 0.3);
+  box-shadow: 0 6px 20px rgba(219, 200, 26, 0.3);
 }
 
 .random-btn:disabled {
@@ -48,8 +48,8 @@
 }
 
 .favorites-toggle {
-  background: linear-gradient(135deg, #ffd54f 0%, #ffb300 100%);
-  color: #333;
+  background: #DBC81A;
+  color: #000000;
   border: none;
   padding: 0.75rem 1.5rem;
   border-radius: 8px;
@@ -61,7 +61,7 @@
 
 .favorites-toggle:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 179, 0, 0.3);
+  box-shadow: 0 6px 20px rgba(219, 200, 26, 0.3);
 }
 
 .fact-card {
@@ -69,7 +69,7 @@
   border-radius: 10px;
   padding: 1.5rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  border-left: 4px solid #ff6f00;
+  border-left: 4px solid #DBC81A;
 }
 
 .fact-header {
@@ -80,8 +80,8 @@
 }
 
 .category {
-  background: linear-gradient(135deg, #ff6f00 0%, #e65100 100%);
-  color: white;
+  background: #DBC81A;
+  color: #000000;
   padding: 0.25rem 0.75rem;
   border-radius: 20px;
   font-size: 0.8rem;
@@ -101,12 +101,12 @@
 }
 
 .favorite-btn:hover {
-  background: rgba(255, 179, 0, 0.1);
+  background: rgba(219, 200, 26, 0.1);
   transform: scale(1.1);
 }
 
 .favorite-btn.favorited {
-  color: #ffb300;
+  color: #DBC81A;
 }
 
 .fact-text {

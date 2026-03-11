@@ -1,19 +1,19 @@
 .honey-products {
-  background: linear-gradient(135deg, #fff9e6 0%, #ffe6b3 100%);
+  background: #ffffff;
   border-radius: 12px;
   padding: 2rem;
-  box-shadow: 0 4px 15px rgba(199, 124, 0, 0.1);
-  border-left: 5px solid #d4a600;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-left: 5px solid #DBC81A;
 }
 
 .honey-products h2 {
-  color: #8b6914;
+  color: #000000;
   margin: 0 0 0.5rem 0;
   font-size: 1.8rem;
 }
 
 .honey-products .subtitle {
-  color: #b8860b;
+  color: #666;
   margin: 0 0 1.5rem 0;
   font-size: 0.95rem;
 }
@@ -35,13 +35,13 @@
 }
 
 .search-input:focus {
-  border-color: #d2691e;
+  border-color: #DBC81A;
   outline: none;
 }
 
 .refresh-btn {
-  background: linear-gradient(135deg, #ffa500 0%, #ff8c00 100%);
-  color: white;
+  background: #DBC81A;
+  color: #000000;
   border: none;
   padding: 0.75rem 1.5rem;
   border-radius: 8px;
@@ -54,7 +54,7 @@
 
 .refresh-btn:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 140, 0, 0.3);
+  box-shadow: 0 6px 20px rgba(219, 200, 26, 0.3);
 }
 
 .refresh-btn:disabled {
@@ -98,7 +98,7 @@
 }
 
 .product-info h3 {
-  color: #8b6914;
+  color: #000000;
   margin: 0 0 0.5rem 0;
   font-size: 1.2rem;
   line-height: 1.4;
@@ -140,8 +140,8 @@
 .view-details-btn {
   display: inline-block;
   padding: 0.6rem 1.2rem;
-  background: linear-gradient(135deg, #ffa500 0%, #ff8c00 100%);
-  color: white;
+  background: #DBC81A;
+  color: #000000;
   text-decoration: none;
   border-radius: 6px;
   font-weight: 600;
@@ -151,7 +151,7 @@
 
 .view-details-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(255, 140, 0, 0.3);
+  box-shadow: 0 4px 12px rgba(219, 200, 26, 0.3);
 }
 
 .error-message {
@@ -177,8 +177,8 @@
 }
 
 .random-btn {
-  background: linear-gradient(135deg, #ffa500 0%, #ff8c00 100%);
-  color: white;
+  background: #DBC81A;
+  color: #000000;
   border: none;
   padding: 1rem 2rem;
   border-radius: 8px;
@@ -190,7 +190,7 @@
 
 .random-btn:hover:not(:disabled) {
   transform: scale(1.05);
-  box-shadow: 0 8px 25px rgba(255, 140, 0, 0.4);
+  box-shadow: 0 8px 25px rgba(219, 200, 26, 0.4);
 }
 
 .random-btn:disabled {
