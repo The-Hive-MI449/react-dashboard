@@ -16,10 +16,9 @@ export function HoneyProducts() {
   const [products, setProducts] = useState<Product[]>([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
-  const [searchTerm, setSearchTerm] = useState('')
   const [categoryTag, setCategoryTag] = useState('en:honey')
   const [pageSize, setPageSize] = useState(50)
-  const [filteredProducts, setFilteredProducts] = useState<Product[]>([])
+  const [currentProduct, setCurrentProduct] = useState<Product | null>(null)
 
   const fetchHoneyProducts = useCallback(async () => {
     setLoading(true)
@@ -43,7 +42,11 @@ export function HoneyProducts() {
       const validProducts = productsData.filter((product: Product) => product.product_name)
 
       setProducts(validProducts)
-      setFilteredProducts(validProducts)
+      // Set a random product as the initial display
+      if (validProducts.length > 0) {
+        const randomIndex = Math.floor(Math.random() * validProducts.length)
+        setCurrentProduct(validProducts[randomIndex])
+      }
     } catch (err) {
       setError(err instanceof Error ? err.message : 'An error occurred while fetching honey products')
     } finally {
@@ -55,17 +58,11 @@ export function HoneyProducts() {
     fetchHoneyProducts()
   }, [fetchHoneyProducts])
 
-  useEffect(() => {
-    if (searchTerm.trim() === '') {
-      setFilteredProducts(products)
-    } else {
-      const filtered = products.filter(product =>
-        product.product_name?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        product.brands?.toLowerCase().includes(searchTerm.toLowerCase())
-      )
-      setFilteredProducts(filtered)
-    }
-  }, [products, searchTerm])
+  const getRandomProduct = () => {
+    if (products.length === 0) return
+    const randomIndex = Math.floor(Math.random() * products.length)
+    setCurrentProduct(products[randomIndex])
+  }
 
 
   function getNutriScoreColor(grade?: string) {
@@ -102,14 +99,6 @@ export function HoneyProducts() {
       <div className="search-container">
         <input
           type="text"
-          placeholder="Search products..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          className="search-input"
-        />
-
-        <input
-          type="text"
           placeholder="Category tag (e.g. en:honey or en:tea)"
           value={categoryTag}
           onChange={(e) => setCategoryTag(e.target.value)}
@@ -128,58 +117,68 @@ export function HoneyProducts() {
         />
 
         <button onClick={fetchHoneyProducts} disabled={loading} className="refresh-btn">
-          {loading ? 'Loading...' : '🔄 Refresh'}
+          {loading ? 'Loading...' : '🔄 Load Products'}
         </button>
       </div>
 
       {error && <p className="error-message">{error}</p>}
 
-      <div className="products-grid">
-        {filteredProducts.map((product, index) => (
-          <div key={index} className="product-card">
-            {product.image_url && (
+      <div className="random-product-section">
+        <button 
+          onClick={getRandomProduct} 
+          disabled={products.length === 0 || loading}
+          className="random-btn"
+        >
+          🎲 Show Random Honey Product
+        </button>
+      </div>
+
+      {currentProduct && (
+        <div className="single-product-container">
+          <div className="product-card">
+            {currentProduct.image_url && (
               <div className="product-image">
                 <img
-                  src={product.image_url}
-                  alt={product.product_name}
+                  src={currentProduct.image_url}
+                  alt={currentProduct.product_name}
                   loading="lazy"
                 />
               </div>
             )}
 
             <div className="product-info">
-              <h3>{product.product_name}</h3>
-              {product.brands && <p className="brand">by {product.brands}</p>}
+              <h3>{currentProduct.product_name}</h3>
+              {currentProduct.brands && <p className="brand">by {currentProduct.brands}</p>}
 
               <div className="scores">
-                {product.nutriscore_grade && (
+                {currentProduct.nutriscore_grade && (
                   <div className="score">
                     <span className="score-label">Nutrition:</span>
                     <span
                       className="score-value"
-                      style={{ backgroundColor: getNutriScoreColor(product.nutriscore_grade) }}
+                      style={{ backgroundColor: getNutriScoreColor(currentProduct.nutriscore_grade) }}
                     >
-                      {product.nutriscore_grade.toUpperCase()}
+                      {currentProduct.nutriscore_grade.toUpperCase()}
                     </span>
                   </div>
                 )}
 
-                {product.ecoscore_grade && (
+                {currentProduct.ecoscore_grade && (
                   <div className="score">
                     <span className="score-label">Eco:</span>
                     <span
                       className="score-value"
-                      style={{ backgroundColor: getEcoScoreColor(product.ecoscore_grade) }}
+                      style={{ backgroundColor: getEcoScoreColor(currentProduct.ecoscore_grade) }}
                     >
-                      {product.ecoscore_grade.toUpperCase()}
+                      {currentProduct.ecoscore_grade.toUpperCase()}
                     </span>
                   </div>
                 )}
               </div>
 
-              {product.url && (
+              {currentProduct.url && (
                 <a
-                  href={product.url}
+                  href={currentProduct.url}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="view-details-btn"
@@ -189,11 +188,7 @@ export function HoneyProducts() {
               )}
             </div>
           </div>
-        ))}
-      </div>
-
-      {filteredProducts.length === 0 && !loading && !error && (
-        <p className="no-results">No honey products found matching your search.</p>
+        </div>
       )}
     </div>
   )
