@@ -85,6 +85,10 @@ h3, p{
     font-family: "Work Sans"
 }
 
+p{
+  background-color: #DBC81A;
+}
+
 h1{
   padding-bottom: 20px;
   font-size: 48px;
