@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import BeeSVG from '../buttonbee'
 
 type Weather = {
   temperature: number
@@ -78,7 +79,7 @@ function App() {
 
   return (
     <div className="App" style={{padding:20,maxWidth:600,margin:'0 auto'}}>
-      <h1>Weather by Zipcode</h1>
+      <h1>Bee Foraging Conditions</h1>
       <form onSubmit={handleFetch} style={{display:'flex',gap:8,alignItems:'center'}}>
         <input
           aria-label="zipcode"
@@ -86,8 +87,8 @@ function App() {
           value={zip}
           onChange={(e) => setZip(e.target.value)}
         />
-        <button className="lookup-btn" type="submit" disabled={loading}>
-          {loading ? 'Loading...' : 'Lookup'}
+        <button className="lookup-btn" type="submit" disabled={loading} aria-label="Lookup">
+          {loading ? 'Loading...' : <BeeSVG />}
         </button>
       </form>
 

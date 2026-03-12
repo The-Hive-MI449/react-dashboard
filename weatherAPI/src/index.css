@@ -95,3 +95,27 @@ form {
   align-items: center;
   gap: 20px;
 }
+
+/* Lookup button (bee SVG) styles */
+.lookup-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 10px;
+  background-color: var(--accent);
+  color: #000000;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 8px;
+}
+.lookup-btn:hover {
+  filter: brightness(0.96);
+}
+.lookup-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.lookup-btn svg {
+  width: 28px;
+  height: auto;
+  display: block;
+}
