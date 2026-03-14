@@ -9,7 +9,7 @@ type Weather = {
   city?: string
 }
 
-function App() {
+function Weather() {
   const [zip, setZip] = useState('')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -80,26 +80,23 @@ function App() {
   return (
     <div className="App" style={{padding:20,maxWidth:600,margin:'0 auto'}}>
       <h1>Bee Foraging Conditions</h1>
-      <form onSubmit={handleFetch} style={{display:'flex',gap:8,alignItems:'center'}}>
+      <form onSubmit={handleFetch} className="weather-form">
         <input
           aria-label="zipcode"
           placeholder="Enter 5-digit US zipcode"
           value={zip}
           onChange={(e) => setZip(e.target.value)}
         />
-        <button className="lookup-btn" type="submit" disabled={loading} aria-label="Lookup">
-          {loading ? 'Loading...' : <BeeSVG />}
-        </button>
       </form>
 
-      {error && <p style={{color:'red'}}>{error}</p>}
+      {loading && <p className="weather-loading">Loading weather…</p>}
+      {error && <p className="weather-error">{error}</p>}
 
       {weather && (
-        <div style={{marginTop:16}}>
+        <div className="weather-output">
           <p><strong>Temperature:</strong> {weather.temperature} °F</p>
           <p><strong>Wind Speed:</strong> {weather.windspeed} mph</p>
-          {/* {weather.time && <p><strong>Time:</strong> {weather.time}</p>} */}
-          <p style={{marginTop:12,fontWeight:500}}>{advisory}</p>
+          <p className="weather-advisory">{advisory}</p>
         </div>
       )}
 
@@ -110,4 +107,4 @@ function App() {
   )
 }
 
-export default App
+export default Weather

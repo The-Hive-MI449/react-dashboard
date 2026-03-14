@@ -1,42 +1,63 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1rem;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
 .card {
-  padding: 2em;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #fff9e8 0%, #fff2c9 100%);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  border: 1px solid #f0d48f;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  text-align: left;
+  color: #2b2b2b;
 }
 
-.read-the-docs {
-  color: #888;
+.card h1 {
+  margin: 0;
+  font-size: 1.45rem;
+  color: #2f2200;
 }
+
+.fact-content {
+  border-top: 1px solid #e7ca7c;
+  padding-top: 0.9rem;
+}
+
+.fact-content h3 {
+  margin: 0 0 0.8rem;
+  color: #2f2b17;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.fact-content p {
+  margin: 0.6rem 0 0.35rem;
+  color: #373737;
+  min-height: 1.4rem;
+}
+
+.fact-content small {
+  color: #5c5c5c;
+}
+
+.fact-content div {
+  display: inline-flex;
+  margin-bottom: 0.7rem;
+}
+
+@media (max-width: 768px) {
+  #root {
+    padding: 0.75rem;
+  }
+
+  .card {
+    padding: 0.8rem;
+  }
+}
+

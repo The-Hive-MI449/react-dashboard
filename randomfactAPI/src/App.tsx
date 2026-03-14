@@ -3,7 +3,7 @@ import './App.css'
 import beeFactsData from './beefacts.json'
 import BeeSVG from './buttonbee'
 
-function App() {
+function Facts() {
   const [fact, setFact] = useState("")
 
   const getRandomBeeFact = () => {
@@ -13,20 +13,19 @@ function App() {
   }
 
   return (
-    <>
-      <div></div>
+    <div>
       <h1>Random Bee Fact!</h1>
-      <div className="card">
+      <div className="fact-content">
         <h3>Bee inquisitive! Click the bee for a fun fact about our pollinating friends.</h3>
         <div onClick={getRandomBeeFact} style={{ cursor: 'pointer' }}>
           <BeeSVG />
         </div>
-        <p>{fact}</p>
+        <p className='card'>{fact || 'Click the bee for a fun fact!'}</p>
         <small>All bee facts were sourced from bestbees.com. Thank you!</small>
       </div>
-    </>
+    </div>
   )
 }
 
-export default App
+export default Facts
 

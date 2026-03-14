@@ -1,7 +1,7 @@
 import './App.css'
 import { HoneyProducts } from './components/HoneyProducts'
 
-function App() {
+export default function App() {
   return (
     <div className="app">
       <header className="app-header">
@@ -26,5 +26,3 @@ function App() {
     </div>
   )
 }
-
-export default App

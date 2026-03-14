@@ -89,39 +89,7 @@ export function HoneyProducts() {
 
   return (
     <div className="honey-products">
-      <h2>🍯 {categoryTag.trim() === '' ? 'Products' : categoryTag.replace(/^\w+:/, '') + ' Products'}</h2>
-      <p className="subtitle">
-        {categoryTag.trim() === ''
-          ? 'Explore a variety of products from OpenFoodFacts'
-          : `Explore items tagged with "${categoryTag}"`}
-      </p>
-
-      <div className="search-container">
-        <input
-          type="text"
-          placeholder="Category tag (e.g. en:honey or en:tea)"
-          value={categoryTag}
-          onChange={(e) => setCategoryTag(e.target.value)}
-          className="search-input"
-        />
-
-        <input
-          type="number"
-          min={1}
-          max={100}
-          value={pageSize}
-          onChange={(e) => setPageSize(Number(e.target.value))}
-          className="search-input"
-          style={{ width: '6rem' }}
-          title="Number of products to fetch"
-        />
-
-        <button onClick={fetchHoneyProducts} disabled={loading} className="refresh-btn">
-          {loading ? 'Loading...' : '🔄 Load Products'}
-        </button>
-      </div>
-
-      {error && <p className="error-message">{error}</p>}
+      <h2>Honey Products</h2>
 
       <div className="random-product-section">
         <button 
@@ -129,9 +97,11 @@ export function HoneyProducts() {
           disabled={products.length === 0 || loading}
           className="random-btn"
         >
-          🎲 Show Random Honey Product
+          {loading ? 'Loading products...' : '🎲 Show Random Honey Product'}
         </button>
       </div>
+
+      {loading && <p className="loading-text">Loading honey products…</p>}
 
       {currentProduct && (
         <div className="single-product-container">
@@ -190,6 +160,9 @@ export function HoneyProducts() {
           </div>
         </div>
       )}
+      <footer className="app-footer">
+        <p>Powered by OpenFoodFacts API</p>
+      </footer>
     </div>
   )
 }
