@@ -1,5 +1,5 @@
 import './App.css'
-import { HoneyProducts } from "/workspaces/react-dashboard/honeyAPI/src/components/HoneyProducts";
+import { HoneyProducts } from "../honeyAPI/src/components/HoneyProducts";
 import Facts from "../randomfactAPI/src/App"
 import Weather from "../weatherAPI/src/App"
 import { useState } from 'react';
