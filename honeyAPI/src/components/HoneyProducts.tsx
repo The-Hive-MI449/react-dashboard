@@ -16,8 +16,8 @@ export function HoneyProducts() {
   const [products, setProducts] = useState<Product[]>([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
-  const [categoryTag, setCategoryTag] = useState('en:honey')
-  const [pageSize, setPageSize] = useState(50)
+  const categoryTag = 'en:honey'
+  const pageSize = 50
   const [currentProduct, setCurrentProduct] = useState<Product | null>(null)
 
   const fetchHoneyProducts = useCallback(async () => {
@@ -52,7 +52,7 @@ export function HoneyProducts() {
     } finally {
       setLoading(false)
     }
-  }, [categoryTag, pageSize])
+  }, [])
 
   useEffect(() => {
     fetchHoneyProducts()
@@ -102,6 +102,8 @@ export function HoneyProducts() {
       </div>
 
       {loading && <p className="loading-text">Loading honey products…</p>}
+
+      {error && <p className="error-text">{error}</p>}
 
       {currentProduct && (
         <div className="single-product-container">
